@@ -26,7 +26,7 @@ const ProductTable = ({products}) => {
           </thead>
           <tbody>
             {products.map((product) => {
-              return <Product product={product}/>
+              return <Product key={product.id} product={product}/>
             })}
           </tbody>
         </Table>
