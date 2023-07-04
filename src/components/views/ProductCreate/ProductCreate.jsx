@@ -16,7 +16,10 @@ const ProductCreate = ({url, getProducts}) => {
     e.preventDefault();
 
     if (!validateProductName(name) || !validatePrice(price) || !validateUrl(urlImg) || !validateCategory(category)){
-      alert("Validacion Erronea");
+      Swal.fire(
+        'Ups!',
+        'Some data is invalid'
+      )
       return;
     }
 
