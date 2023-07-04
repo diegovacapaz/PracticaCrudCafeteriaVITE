@@ -8,8 +8,21 @@ import ProductCreate from "./components/views/ProductCreate/ProductCreate";
 import ProductEdit from "./components/views/ProductEdit/ProductEdit";
 import Error404 from "./components/views/Error404/Error404";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const URL = import.meta.env.VITE_API_CAFETERIA;
+
+  const getProducts = async () => {
+    try {
+      const response = await fetch();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <Router>
