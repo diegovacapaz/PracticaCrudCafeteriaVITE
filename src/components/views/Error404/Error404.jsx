@@ -1,5 +1,6 @@
 import React from "react";
 import "./Error404.css";
+import { Link } from "react-router-dom";
 
 const Error404 = () => {
   return (
@@ -133,7 +134,7 @@ const Error404 = () => {
       </div>
       <div className="text-center">
         <h2>It seems there was an error ☹ back to home!</h2>
-        <button className="btn-yellow my-4">Home</button>
+        <Link to="/" className="btn-yellow my-4 text-decoration-none text-center">Home</Link>
       </div>
     </div>
   );
