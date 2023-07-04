@@ -1,25 +1,3 @@
 {
-  "products": [
-    {
-      "productName": "jujujuju",
-      "price": "415",
-      "urlImg": "https://t1.uc.ltmcdn.com/images/4/2/9/img_como_hacer_licuado_de_banana_35924_600_square.jpg",
-      "category": "bebida-fria",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "productName": "Licuado de banana",
-      "price": 420,
-      "urlImg": "https://www.paulinacocina.net/wp-content/uploads/2022/01/licuado-de-banana.jpg",
-      "category": "Bebida-fría"
-    },
-    {
-      "productName": "Licuado de Frutilla b",
-      "price": "255",
-      "urlImg": "https://s1.eestatic.com/2017/02/13/cocinillas/cocinillas_193495389_116293001_1706x960.jpg",
-      "category": "dulce",
-      "id": 3
-    }
-  ]
+  "products": []
 }

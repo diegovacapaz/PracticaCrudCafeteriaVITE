@@ -13,7 +13,8 @@ const ProductTable = ({products, url, getProducts}) => {
         </div>
         <hr />
         {/* Table of products */}
-        <Table bordered hover responsive className="align-middle mt-3">
+        {(products.length > 0)?
+          <Table bordered hover responsive className="align-middle mt-3">
           <thead>
             <tr>
               <th>N.</th>
@@ -29,11 +30,10 @@ const ProductTable = ({products, url, getProducts}) => {
               return <Product key={product.id} getProducts={getProducts} url={url} product={product}/>
             })}
           </tbody>
-        </Table>
-        {/* No products found message */}
-        {/* <div className="no-products-found d-flex align-items-center justify-content-center">
+        </Table> :
+        <div className="no-products-found d-flex align-items-center justify-content-center">
           <h1>🥐 No products found ☕</h1>
-        </div> */}
+        </div>}
       </Container>
     </div>
   );
