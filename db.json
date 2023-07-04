@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "Café",
+      "price": 350,
+      "urlImg": "http://",
+      "category": "Bebida Caliente"
+    },
+    {
+      "id": 2,
+      "productName": "Licuado de banana",
+      "price": 420,
+      "urlImg": "http://",
+      "category": "Bebida fría"
+    }
+  ]
+}
