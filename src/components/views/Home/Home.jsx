@@ -12,6 +12,7 @@ const Home = ({products}) => {
       <Container className="py-5">
         <h1>Products</h1>
         <hr />
+        {(products.length>0)?
         <Row>
           {
             products.map((product) => {
@@ -23,11 +24,10 @@ const Home = ({products}) => {
             })
           }
 
-        </Row>
-        {/* No products found message */}
-        {/* <div className="no-products-found d-flex align-items-center justify-content-center">
+        </Row>:
+        <div className="no-products-found d-flex align-items-center justify-content-center">
           <h1>🥐 No products found ☕</h1>
-        </div> */}
+        </div>}
       </Container>
     </div>
   );
