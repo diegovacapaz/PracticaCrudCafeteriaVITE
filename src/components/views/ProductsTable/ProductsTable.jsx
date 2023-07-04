@@ -3,7 +3,7 @@ import { Container, Table } from "react-bootstrap";
 import Product from "./Product/Product";
 import { Link } from "react-router-dom";
 
-const ProductTable = () => {
+const ProductTable = ({products}) => {
   return (
     <div>
       <Container className="py-5">
@@ -25,11 +25,9 @@ const ProductTable = () => {
             </tr>
           </thead>
           <tbody>
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            {products.map((product) => {
+              return <Product product={product}/>
+            })}
           </tbody>
         </Table>
         {/* No products found message */}

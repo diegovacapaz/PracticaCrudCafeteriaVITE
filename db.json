@@ -4,14 +4,14 @@
       "id": 1,
       "productName": "Café",
       "price": 350,
-      "urlImg": "http://",
+      "urlImg": "https://s1.eestatic.com/2017/02/13/cocinillas/cocinillas_193495389_116293001_1706x960.jpg",
       "category": "Bebida Caliente"
     },
     {
       "id": 2,
       "productName": "Licuado de banana",
       "price": 420,
-      "urlImg": "http://",
+      "urlImg": "https://www.paulinacocina.net/wp-content/uploads/2022/01/licuado-de-banana.jpg",
       "category": "Bebida fría"
     }
   ]

@@ -17,11 +17,17 @@ function App() {
 
   const getProducts = async () => {
     try {
-      const response = await fetch();
+      const response = await fetch(URL);
+      const productApi = await response.json();
+      setProducts(productApi);
     } catch (error) {
       console.log(error);
     }
   }
+
+  useEffect(() => {
+    getProducts();
+  },[]);
 
   return (
     <div>
@@ -30,7 +36,7 @@ function App() {
         <main>
           <Routes>
             <Route exact path="/" element={<Home/>}/>
-            <Route exact path="/product/table" element={<ProductsTable />}/>
+            <Route exact path="/product/table" element={<ProductsTable products={products}/>}/>
             <Route exact path="/product/create" element={<ProductCreate/>}/>
             <Route exact path="/product/edit" element={<ProductEdit/>}/>
             <Route exact path="*" element={<Error404/>}/>
