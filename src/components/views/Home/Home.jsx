@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import CardProduct from "./CardProduct/CardProduct";
 import CarouselHome from "./CarouselHome/CarouselHome";
 
-const Home = () => {
+const Home = ({products}) => {
   return (
     <div>
       {/* Carousel */}
@@ -13,30 +13,16 @@ const Home = () => {
         <h1>Products</h1>
         <hr />
         <Row>
-          <Col xl={3} lg={4} md={6}>
-            <CardProduct />
-          </Col>
-          <Col xl={3} lg={4} md={6}>
-            <CardProduct />
-          </Col>
-          <Col xl={3} lg={4} md={6}>
-            <CardProduct />
-          </Col>
-          <Col xl={3} lg={4} md={6}>
-            <CardProduct />
-          </Col>
-          <Col xl={3} lg={4} md={6}>
-            <CardProduct />
-          </Col>
-          <Col xl={3} lg={4} md={6}>
-            <CardProduct />
-          </Col>
-          <Col xl={3} lg={4} md={6}>
-            <CardProduct />
-          </Col>
-          <Col xl={3} lg={4} md={6}>
-            <CardProduct />
-          </Col>
+          {
+            products.map((product) => {
+              return(
+                <Col key={product.id} xl={3} lg={4} md={6}>
+                  <CardProduct product={product}/>
+                </Col>
+              )
+            })
+          }
+
         </Row>
         {/* No products found message */}
         {/* <div className="no-products-found d-flex align-items-center justify-content-center">
