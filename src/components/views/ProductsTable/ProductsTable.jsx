@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Table } from "react-bootstrap";
 import Product from "./Product/Product";
+import { Link } from "react-router-dom";
 
 const ProductTable = () => {
   return (
@@ -8,7 +9,7 @@ const ProductTable = () => {
       <Container className="py-5">
         <div className="d-flex align-items-center justify-content-between">
           <h1>Products Table</h1>
-          <button className="btn-yellow">Add Product</button>
+          <Link to="/product/create" className="btn-yellow text-decoration-none text-center">Add Product</Link>
         </div>
         <hr />
         {/* Table of products */}
