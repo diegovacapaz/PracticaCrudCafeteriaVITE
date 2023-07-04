@@ -13,6 +13,27 @@
       "price": 420,
       "urlImg": "https://www.paulinacocina.net/wp-content/uploads/2022/01/licuado-de-banana.jpg",
       "category": "Bebida fría"
+    },
+    {
+      "productName": "Licuado de Frutilla",
+      "price": "255",
+      "urlImg": "https://t1.uc.ltmcdn.com/images/4/2/9/img_como_hacer_licuado_de_banana_35924_600_square.jpg",
+      "category": "bebida-fria",
+      "id": 3
+    },
+    {
+      "productName": "Licuado de Manzana",
+      "price": "221",
+      "urlImg": "https://t1.uc.ltmcdn.com/images/4/2/9/img_como_hacer_licuado_de_banana_35924_600_square.jpg",
+      "category": "bebida-fria",
+      "id": 4
+    },
+    {
+      "productName": "Bebida Rara",
+      "price": "485",
+      "urlImg": "https://t1.uc.ltmcdn.com/images/4/2/9/img_como_hacer_licuado_de_banana_35924_600_square.jpg",
+      "category": "bebida-caliente",
+      "id": 5
     }
   ]
 }

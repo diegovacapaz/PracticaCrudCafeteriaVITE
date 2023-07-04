@@ -1,11 +1,62 @@
 import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
+import { validateProductName, validateCategory, validatePrice, validateUrl } from "../../helpers/ValidateFields";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
-const ProductCreate = () => {
+const ProductCreate = ({url, getProducts}) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [urlImg, setUrlImg] = useState("");
   const [category, setCategory] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+
+    if (!validateProductName(name) || !validatePrice(price) || !validateUrl(urlImg) || !validateCategory(category)){
+      alert("Validacion Erronea");
+      return;
+    }
+
+    const newProduct = {
+      productName: name,
+      price,
+      urlImg,
+      category
+    }
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Save'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try{
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newProduct)
+          });
+          if(response.status === 201) {
+            getProducts();
+            Swal.fire(
+              'Created!',
+              'success'
+            )
+            navigate("/product/table");
+          }
+        }catch(error){
+          console.log(error);
+        }
+      }
+    })
+  }
 
   return (
     <div>
@@ -13,7 +64,7 @@ const ProductCreate = () => {
         <h1>Add Product</h1>
         <hr />
         {/* Form Product */}
-        <Form className="my-5">
+        <Form className="my-5" onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Product name*</Form.Label>
             <Form.Control type="text" placeholder="Ej: Café" value={name} onChange={(e)=>{
